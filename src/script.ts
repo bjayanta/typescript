@@ -1,5 +1,13 @@
-// console.log("Hello Wolrd!");
+// let abc : string;
+let abc : any;
 
-const country = "Bangladesh"
+abc = 5;
+abc = "Jayanta"
 
-console.log(country);
+let anyArr : any[] = [];
+anyArr.push(10, true, "name", 5.2, null, undefined)
+
+let anyObject: {
+    name: any,
+    age: any
+} 
