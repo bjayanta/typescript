@@ -1,5 +1,7 @@
-# Dynamic Type
+# Dynamic/Any Type
 
-Any type.
+- Variable
+- Array
+- Object
 
 Thanks.
