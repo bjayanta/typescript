@@ -1,9 +1,8 @@
 # Classes
 
-- How to create class?
-- How to create instance variables?
-- How to create methods with parameters?
-- How to create object?
-- Custom type
+- Default/Public modifire
+- Private modifire (init + use)
+- Readonly modifire (init + use)
+- Use constructor explicitly (Example 2)
 
 Thanks.
