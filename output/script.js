@@ -1,29 +1,14 @@
 "use strict";
-// Generics
-// Example 1:
-// const addID = (obj: object) => {
-//     let id = Math.floor(Math.random() * 100)
-//     return { ...obj, id}
-// }
-// const addID = <T extends object>(obj: T) => {
-//     let id = Math.floor(Math.random() * 100)
-//     return { ...obj, id}
-// }
-const addID = (obj) => {
-    let id = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { id });
-};
-let user = addID({
-    name: "Mashrafi",
-    age: 40,
-    country: "Bangladesh"
-});
+// Example:
+var ResponseType;
+(function (ResponseType) {
+    ResponseType[ResponseType["SUCCESS"] = 0] = "SUCCESS";
+    ResponseType[ResponseType["FAILURE"] = 1] = "FAILURE";
+    ResponseType[ResponseType["UNAUTHENTIcaTED"] = 2] = "UNAUTHENTIcaTED";
+    ResponseType[ResponseType["FORBIDDEN"] = 3] = "FORBIDDEN";
+})(ResponseType || (ResponseType = {}));
 const res1 = {
     status: 200,
-    type: 'good',
-    data: {
-        name: "Jayanta",
-        age: 300
-    }
-    // data: "Hello", // Error
+    type: 1,
+    data: "Test"
 };

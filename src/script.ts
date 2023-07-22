@@ -1,51 +1,15 @@
-// Generics
+// Example:
 
-// Example 1:
-// const addID = (obj: object) => {
-//     let id = Math.floor(Math.random() * 100)
-//     return { ...obj, id}
-// }
+enum ResponseType { SUCCESS, FAILURE, UNAUTHENTIcaTED, FORBIDDEN }
 
-// const addID = <T extends object>(obj: T) => {
-//     let id = Math.floor(Math.random() * 100)
-//     return { ...obj, id}
-// }
-
-const addID = <T extends {
-    name: string,
-    age: number
-}>(obj: T) => {
-    let id = Math.floor(Math.random() * 100)
-    return { ...obj, id}
-}
-
-let user = addID({
-    name: "Mashrafi",
-    age: 40,
-    country: "Bangladesh"
-})
-
-// console.log(user);
-
-// Error
-// let user = "Jayanta"
-// addID(user)
-
-
-
-// Example 2:
 interface APIResponse<T> {
     status: number;
-    type: string;
+    type: number;
     data: T;
 }
 
-const res1: APIResponse<object> = {
+const res1: APIResponse<string> = {
     status: 200,
-    type: 'good',
-    data: {
-        name: "Jayanta",
-        age: 300
-    }
-    // data: "Hello", // Error
+    type: 1,
+    data: "Test"
 }

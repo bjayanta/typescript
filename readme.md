@@ -1,4 +1,4 @@
-# Generics
+# ENUM Type
 
 - Overview
 - An example
