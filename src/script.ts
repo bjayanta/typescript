@@ -1,15 +1,17 @@
 // Example:
 
-enum ResponseType { SUCCESS, FAILURE, UNAUTHENTIcaTED, FORBIDDEN }
+enum RType { SUCCESS, FAILURE, UNAUTHENTICATED, FORBIDDEN }
 
 interface APIResponse<T> {
     status: number;
-    type: number;
+    type: RType;
     data: T;
 }
 
-const res1: APIResponse<string> = {
+const res: APIResponse<string> = {
     status: 200,
-    type: 1,
+    type: RType.UNAUTHENTICATED,
     data: "Test"
 }
+
+console.log(res);
