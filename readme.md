@@ -1,4 +1,4 @@
-# ENUM Type
+# Tuples
 
 - Overview
 - How to create enum?
