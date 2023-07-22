@@ -1,8 +1,9 @@
-# Interfaces
+# Generics
 
-- Interfaces overview
-- How to create & use interface
-- Apply on object
-- Apply on class
+- Overview
+- An example
+  - With generic type
+  - With extend
+- Use in Interface
 
 Thanks.

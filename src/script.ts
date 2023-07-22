@@ -1,57 +1,51 @@
-// Example 1: Object
-// Normal way
-// function drawRectangle(options : {
-//     width: number,
-//     length: number
-// }) {
-//     let width = options.width;
-//     let length = options.length;
+// Generics
+
+// Example 1:
+// const addID = (obj: object) => {
+//     let id = Math.floor(Math.random() * 100)
+//     return { ...obj, id}
 // }
 
-// drawRectangle({
-//     width: 30,
-//     length: 20,
-// })
+// const addID = <T extends object>(obj: T) => {
+//     let id = Math.floor(Math.random() * 100)
+//     return { ...obj, id}
+// }
 
-// Create interface
-interface RectangleOptions {
-    width: number;
-    length: number;
+const addID = <T extends {
+    name: string,
+    age: number
+}>(obj: T) => {
+    let id = Math.floor(Math.random() * 100)
+    return { ...obj, id}
 }
 
-// User interface
-function drawRectangle(options : RectangleOptions) {
-    let width = options.width;
-    let length = options.length;
-}
+let user = addID({
+    name: "Mashrafi",
+    age: 40,
+    country: "Bangladesh"
+})
+
+// console.log(user);
 
 // Error
-// drawRectangle({
-//     width: 30,
-//     length: 20,
-//     height: 10
-// })
+// let user = "Jayanta"
+// addID(user)
 
-let threeDOptions = {
-    width: 30,
-    length: 20,
-    height: 10
+
+
+// Example 2:
+interface APIResponse<T> {
+    status: number;
+    type: string;
+    data: T;
 }
 
-drawRectangle(threeDOptions)
-
-
-// Example 2: on Class
-import { IsPlayer } from "./Interfaces/IsPlayer.js";
-import { Player } from "./classes/Player.js";
-
-// Object
-const mashrafi = new Player('Mashrafi', 40, 'Bangladesh');
-let sakib : IsPlayer;
-
-sakib = new Player("Sakib", 35, "Bangladesh")
-
-const players: IsPlayer[] = [];
-
-players.push(sakib)
-players.push(mashrafi)
+const res1: APIResponse<object> = {
+    status: 200,
+    type: 'good',
+    data: {
+        name: "Jayanta",
+        age: 300
+    }
+    // data: "Hello", // Error
+}

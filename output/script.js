@@ -1,34 +1,29 @@
-// Example 1: Object
-// Normal way
-// function drawRectangle(options : {
-//     width: number,
-//     length: number
-// }) {
-//     let width = options.width;
-//     let length = options.length;
+"use strict";
+// Generics
+// Example 1:
+// const addID = (obj: object) => {
+//     let id = Math.floor(Math.random() * 100)
+//     return { ...obj, id}
 // }
-// User interface
-function drawRectangle(options) {
-    let width = options.width;
-    let length = options.length;
-}
-// Error
-// drawRectangle({
-//     width: 30,
-//     length: 20,
-//     height: 10
-// })
-let threeDOptions = {
-    width: 30,
-    length: 20,
-    height: 10
+// const addID = <T extends object>(obj: T) => {
+//     let id = Math.floor(Math.random() * 100)
+//     return { ...obj, id}
+// }
+const addID = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { id });
 };
-drawRectangle(threeDOptions);
-import { Player } from "./classes/Player.js";
-// Object
-const mashrafi = new Player('Mashrafi', 40, 'Bangladesh');
-let sakib;
-sakib = new Player("Sakib", 35, "Bangladesh");
-const players = [];
-players.push(sakib);
-players.push(mashrafi);
+let user = addID({
+    name: "Mashrafi",
+    age: 40,
+    country: "Bangladesh"
+});
+const res1 = {
+    status: 200,
+    type: 'good',
+    data: {
+        name: "Jayanta",
+        age: 300
+    }
+    // data: "Hello", // Error
+};
