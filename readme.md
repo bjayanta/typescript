@@ -28,5 +28,6 @@ Inspire from [TypeScript Bangla ( বাংলা ) Tutorial Series - Learn with
 13. Generics
 14. Enum Types
 15. Tuples
+16. Project
 
 Thanks.
